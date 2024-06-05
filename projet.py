@@ -1,6 +1,6 @@
 from datetime import datetime
 
-
+## Defintion de la classe Membre
 class Membre:
     def __init__(self, nom, role):
         self.nom = nom
@@ -9,7 +9,7 @@ class Membre:
     def __str__(self):
         return f"Membre(nom={self.nom}, role={self.role})"
 
-
+# Defintion de la classe tache
 class Tache:
     def __init__(self, nom, description, date_debut, date_fin, responsable, statut):
         self.nom = nom
@@ -26,7 +26,7 @@ class Tache:
             f"responsable={self.responsable}, statut={self.statut})"
         )
 
-
+# Defintion de la classe Risque
 class Risque:
     def __init__(self, nom, probabilite, impact):
         self.nom = nom
@@ -36,7 +36,7 @@ class Risque:
     def __str__(self):
         return f"Risque(nom={self.nom}, probabilite={self.probabilite}, impact={self.impact})"
 
-
+# Defintion de la classe Equipe
 class Equipe:
     def __init__(self):
         self.membres = []
@@ -50,7 +50,7 @@ class Equipe:
     def __str__(self):
         return f"Equipe(membres={', '.join(str(membre) for membre in self.membres)})"
 
-
+# Defintion de la classe projet
 class Projet:
     def __init__(self, nom, description, date_debut, date_fin):
         self.nom = nom
@@ -85,7 +85,7 @@ class Projet:
             f"equipe={self.equipe})"
         )
 
-
+# Defintion de la  fonction gerer rapport performance 
 def generer_rapport_performance(projet):
     rapport = f"Rapport de performance du projet {projet.nom}\n\n"
 
@@ -109,7 +109,7 @@ def generer_rapport_performance(projet):
 
     return rapport
 
-
+#... fonction de test pour verifier le compoertement  des classes
 def test_projet():
     membre1 = Membre("Modou", "Chef de projet")
     membre2 = Membre("Awa", "Développeur")
@@ -147,10 +147,12 @@ def test_projet():
     print("Risques dans le projet:", [str(risque) for risque in projet.risques])
     print("Changements enregistrés:", projet.changements)
     print("Version du projet:", projet.version)
-
+#Ajout d'une demonstration de géNération de rapport de performance
+    
     rapport_performance = generer_rapport_performance(projet)
     print("\nRapport de performance du projet :\n", rapport_performance)
 
 
+#appel a la fonction de test
 if __name__ == "__main__":
     test_projet()
