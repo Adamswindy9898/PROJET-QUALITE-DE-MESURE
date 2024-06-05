@@ -121,14 +121,8 @@ def test_projet():
         membre1,
         "En cours",
     )
-    tache2 = Tache(
-        "Tache2",
-        "Description2",
-        datetime(2024, 6, 11),
-        datetime(2024, 6, 20),
-        membre2,
-        "En attente",
-    )
+   
+
     projet = Projet(
         "Projet1", "Description du projet", datetime(2024, 6, 1), datetime(2024, 12, 31)
     )
